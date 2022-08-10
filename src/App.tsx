@@ -3,7 +3,7 @@ import SdSession from './components/shapediver/atoms/SdSession';
 import SdViewport from './components/shapediver/atoms/SdViewport';
 import SdSessionParameterPanel from './components/ui-kit/molecules/SdSessionParameterPanel';
 import SdViewportError from './components/ui-kit/atoms/SdViewportError';
-import { Card, Flex, Grid, SliderField, TextField } from '@aws-amplify/ui-react';
+import { Card, Grid, SliderField, TextField } from '@aws-amplify/ui-react';
 import { ChangeEvent, useState } from 'react';
 import SdSessionParameterBridge from './features/parameters/SdSessionParameterBridge';
 import SdViewportInteractionEngine from './components/shapediver/atoms/SdViewportInteractionEngine';
