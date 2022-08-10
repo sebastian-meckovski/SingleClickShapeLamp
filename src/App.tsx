@@ -9,6 +9,8 @@ import SdSessionParameterBridge from './features/parameters/SdSessionParameterBr
 import SdViewportInteractionEngine from './components/shapediver/atoms/SdViewportInteractionEngine';
 import SdSessionInteractionData from './components/shapediver/atoms/SdSessionInteractionData';
 import SdSessionAnimationData from './components/shapediver/atoms/SdSessionAnimationData';
+import BootstrapNavbar from './components/bootstrap/Navbar';
+import Footer from './components/bootstrap/Footer';
 
 const selectManagerData = {effectMaterial: {color: "#ffff00"}};
 const interactionTypes = {select: true};
@@ -19,67 +21,72 @@ function App() {
   const [interactionLevel, setInteractionLevel] = useState(1);
   
   return (
-    <div className="App">
-      <Grid
-        className="Grid"
-        columnGap="0.5rem"
-        rowGap="0.5rem"
-        templateColumns="1fr 1fr 1fr 1fr 1fr"
-        templateRows="4fr 1fr"
-      >
-        <Card
-          columnStart="1"
-          columnEnd="4"
-          style={{height: '100vh', maxHeight: '100vh'}}
+    <>
+      <BootstrapNavbar/>
+      <div className="App">
+        <Grid
+          className="Grid"
+          columnGap="0.5rem"
+          rowGap="0.5rem"
+          templateColumns="1fr 1fr 1fr 1fr 1fr"
+          templateRows="1fr 1fr 1fr"
         >
-          <SdViewport viewportId='viewport_1'>
-            <SdViewportError/>
-            <SdViewportInteractionEngine selectManager={selectManagerData}/>
-          </SdViewport>
-        </Card>
-        <Card
-          columnStart="4"
-          columnEnd="-1"
-          style={{maxHeight: '100vh'}}
-        >
-          <SdSession
-            ticket={ticket}
-            modelViewUrl={modelViewUrl}
+          <Card
+            columnStart="1"
+            columnEnd="4"
+            rowStart='1'
+            rowEnd='-1'
           >
-            <SdSessionAnimationData />
-            <SdSessionInteractionData level={interactionLevel} interactionTypes={interactionTypes}/>
-            <SdSessionParameterBridge/>
-            <SdSessionParameterPanel/>
-          </SdSession>
-        </Card>
-        <Card
-          columnStart="1"
-          columnEnd="-1"
-        >
-          <Flex direction="row">
-            <TextField
-              placeholder="Ticket for embedding"
-              label="Ticket"
-              defaultValue={ticket}
-              onChange={(e : ChangeEvent<HTMLInputElement>) => setTicket(e.currentTarget.value)}
-            />
-            <TextField
-              placeholder="ModelViewUrl"
-              label="ModelViewUrl"
-              defaultValue={modelViewUrl}
-              onChange={(e : ChangeEvent<HTMLInputElement>) => setModelViewUrl(e.currentTarget.value)}
-            />
-            <SliderField
-              label="Interaction level"
-              defaultValue={interactionLevel}
-              min={0}
-              max={10}
-              onChange={(v: number) => setInteractionLevel(v)}
-            />
-            </Flex>
-        </Card>
-      </Grid>
-    </div>
+            <SdViewport viewportId='viewport_1'>
+              <SdViewportError/>
+              <SdViewportInteractionEngine selectManager={selectManagerData}/>
+            </SdViewport>
+          </Card>
+          <Card
+            columnStart="4"
+            columnEnd="-1"
+            rowStart='2'
+            style={{maxHeight: '100vh'}}
+          >
+            <SdSession
+              ticket={ticket}
+              modelViewUrl={modelViewUrl}
+            >
+              <SdSessionAnimationData />
+              <SdSessionInteractionData level={interactionLevel} interactionTypes={interactionTypes}/>
+              <SdSessionParameterBridge/>
+              <SdSessionParameterPanel/>
+            </SdSession>
+          </Card>
+          <Card
+            columnStart="4"
+            columnEnd="-1"
+            rowStart='1'
+          >
+              <TextField
+                placeholder="Ticket for embedding"
+                label="Ticket"
+                defaultValue={ticket}
+                onChange={(e : ChangeEvent<HTMLInputElement>) => setTicket(e.currentTarget.value)}
+              />
+              <TextField
+                placeholder="ModelViewUrl"
+                label="ModelViewUrl"
+                defaultValue={modelViewUrl}
+                onChange={(e : ChangeEvent<HTMLInputElement>) => setModelViewUrl(e.currentTarget.value)}
+              />
+              <SliderField
+                label="Interaction level"
+                defaultValue={interactionLevel}
+                min={0}
+                max={10}
+                onChange={(v: number) => setInteractionLevel(v)}
+              />
+          </Card>
+        </Grid>
+      </div>
+      <Footer/>
+    </>
   );
 }
 

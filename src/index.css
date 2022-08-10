@@ -1,7 +1,5 @@
 @import "@aws-amplify/ui-react/styles.css";
-html {
-  height: 100vh;
-}
+
 
 body {
   margin: 0;
