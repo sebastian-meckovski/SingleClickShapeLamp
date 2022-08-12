@@ -26,7 +26,7 @@ export default function SdSessionParameterPanel() : JSX.Element {
   else if (session)
   {
     const parameterIds = Object.keys(session.parameters)
-      .filter(id => session.parameters[id].name === 'Shelf Width' || session.parameters[id].name === 'Amount of Panels')
+      .filter(id => session.parameters[id].name === 'parameter.4.verticalPieces' || session.parameters[id].name === 'parameter.5.horizontalPieces' || session.parameters[id].name === 'parameter.2.lampBladeAngle')
     
     return (
       <ScrollView maxHeight="100%">
