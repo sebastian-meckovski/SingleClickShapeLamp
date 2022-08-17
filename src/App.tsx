@@ -31,12 +31,14 @@ function App() {
           rowGap="0.5rem"
           templateColumns="1fr 1fr 1fr 1fr 1fr"
           templateRows="1fr 1fr 1fr"
+          height={'85vh'}
+
         >
           <Card
             columnStart="1"
             columnEnd="4"
             rowStart='1'
-            rowEnd='-1'
+            rowEnd='-2'
           >
             <SdViewport viewportId='viewport_1'>
               <SdViewportError/>
@@ -46,8 +48,7 @@ function App() {
           <Card
             columnStart="4"
             columnEnd="-1"
-            rowStart='2'
-            style={{maxHeight: '100vh'}}
+            rowStart='1'
           >
             <SdSession
               ticket={ticket}
@@ -63,6 +64,7 @@ function App() {
             columnStart="4"
             columnEnd="-1"
             rowStart='1'
+            display={'none'}
           >
               <TextField
                 placeholder="Ticket for embedding"
@@ -85,8 +87,8 @@ function App() {
               />
           </Card>
         </Grid>
+        <Footer/>
       </div>
-      <Footer/>
     </>
   );
 }
