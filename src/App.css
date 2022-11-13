@@ -22,3 +22,13 @@ nav{
   color: #61dafb;
 }
 
+
+#myCanvas{
+  border: 1px solid black;
+  position: absolute;
+  height: 300px;
+  width: 600px;
+  right: 0;
+  top: 50%;
+  margin: 10px;
+}

@@ -11,6 +11,7 @@ import SdSessionInteractionData from './components/shapediver/atoms/SdSessionInt
 import SdSessionAnimationData from './components/shapediver/atoms/SdSessionAnimationData';
 import BootstrapNavbar from './components/bootstrap/Navbar';
 import Footer from './components/bootstrap/Footer';
+import 'ts-draw';
 
 const selectManagerData = {effectMaterial: {color: "#ffff00"}};
 const interactionTypes = {select: true};
@@ -87,6 +88,8 @@ function App() {
               />
           </Card>
         </Grid>
+        <canvas id="myCanvas"></canvas>
+
         <Footer/>
       </div>
     </>
