@@ -1,6 +1,7 @@
 body{
   height: 100vh;
   padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 footer{
@@ -23,12 +24,10 @@ nav{
 }
 
 
-#myCanvas{
+#bezierDrawer{
   border: 1px solid black;
   position: absolute;
-  height: 300px;
-  width: 600px;
   right: 0;
-  top: 50%;
+  top: 40vh;
   margin: 10px;
 }

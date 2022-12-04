@@ -12,6 +12,8 @@ import SdSessionAnimationData from './components/shapediver/atoms/SdSessionAnima
 import BootstrapNavbar from './components/bootstrap/Navbar';
 import Footer from './components/bootstrap/Footer';
 import 'ts-draw';
+import {BezierDrawer} from 'seb-curved-line-drawer'
+
 
 const selectManagerData = {effectMaterial: {color: "#ffff00"}};
 const interactionTypes = {select: true};
@@ -88,7 +90,11 @@ function App() {
               />
           </Card>
         </Grid>
-        <canvas id="myCanvas"></canvas>
+        <div>
+          <BezierDrawer size={400}/>
+
+        </div>
+
 
         <Footer/>
       </div>
