@@ -1,7 +1,7 @@
-import { useContext, useState } from 'react';
-import { SdSessionContext } from '../../shapediver/atoms/SdSessionContext';
-import { IParameterApi } from '@shapediver/viewer';
-import { debounce } from 'debounce';
+import {  useState } from 'react';
+// import { SdSessionContext } from '../../shapediver/atoms/SdSessionContext';
+// import { IParameterApi } from '@shapediver/viewer';
+// import { debounce } from 'debounce';
 import { BezierDrawer } from 'seb-curved-line-drawer';
 
 interface Props {
@@ -18,7 +18,7 @@ interface Coordinates {
 export const LineDrawer = ({ size, paramid }: Props): JSX.Element => {
 	// TODO refactor based on parametersSlice
 
-	const { state, dispatch } = useContext(SdSessionContext);
+	// const { state, dispatch } = useContext(SdSessionContext);
 	const [value, setValue] = useState<Array<Coordinates>>();
 
 	function updateCoords(e: Array<Coordinates>) {
