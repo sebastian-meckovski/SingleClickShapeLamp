@@ -16,6 +16,7 @@ export const Slider = ({ paramid } : Props) : JSX.Element => {
   const session = state.session!;
   const param = session.parameters[paramid] as IParameterApi<number>;
   const value = param.type === 'Float' ? parseFloat(param.value+'') : parseInt(param.value+'')
+  // {   "controlPoints": {     "point1": "{100, 500, 0}",     "point2": "{200, 350, 0}",     "point3": "{200, 150, 0}",     "point4": "{100, 0, 0}"   } }
 
   return (
     <SliderField
@@ -25,7 +26,7 @@ export const Slider = ({ paramid } : Props) : JSX.Element => {
       max={param.max}
       step={Math.pow(0.1, param.decimalplaces as number)}
       defaultValue={value}
-      onChange={debounce((v : number) => dispatch!({type: 'setParameter', id: param.id, value: v+''}), 200)}
+      onChange={debounce((v : number) => dispatch!({type: 'setParameter', id: param.id, value: v.toString()}), 200)}
     />
   );
 };

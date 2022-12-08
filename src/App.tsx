@@ -12,7 +12,6 @@ import SdSessionAnimationData from './components/shapediver/atoms/SdSessionAnima
 import BootstrapNavbar from './components/bootstrap/Navbar';
 import Footer from './components/bootstrap/Footer';
 import 'ts-draw';
-import {BezierDrawer} from 'seb-curved-line-drawer'
 
 
 const selectManagerData = {effectMaterial: {color: "#ffff00"}};
@@ -81,17 +80,16 @@ function App() {
                 defaultValue={modelViewUrl}
                 onChange={(e : ChangeEvent<HTMLInputElement>) => setModelViewUrl(e.currentTarget.value)}
               />
-              <SliderField
+              {/* <SliderField
                 label="Interaction level"
                 defaultValue={interactionLevel}
                 min={0}
                 max={10}
                 onChange={(v: number) => setInteractionLevel(v)}
-              />
+              /> */}
           </Card>
         </Grid>
         <div>
-          <BezierDrawer size={400}/>
 
         </div>
 
