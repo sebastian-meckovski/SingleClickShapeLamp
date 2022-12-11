@@ -26,7 +26,6 @@ export default function SdViewportInteractionEngine({children, selectManager, ho
 
   useEffect( () => {
     if (viewport) {
-      console.log(`Adding interaction engine for viewport ${viewport.id}`)
       
       const engine = new InteractionEngine(viewport);
       if (selectManager) {

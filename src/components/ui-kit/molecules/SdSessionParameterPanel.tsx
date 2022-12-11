@@ -27,7 +27,6 @@ export default function SdSessionParameterPanel(): JSX.Element {
 			<ScrollView maxHeight="100%">
 				<Collection type="list" items={parameterIds} direction="column">
 					{(item, index) => {
-						console.log(item);
 						return (
 							<>
 								<Slider key={index} paramid={item} />

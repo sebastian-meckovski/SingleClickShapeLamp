@@ -21,7 +21,6 @@ export default function SdSessionAnimationData() : JSX.Element {
         }
       ];
       
-      console.log('addning animations..')
       const animationData = new AnimationData("myAnimation", tracks, 0, 5);
       session.node.addData(animationData)
       animationData.repeat = false;

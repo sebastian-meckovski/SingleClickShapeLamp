@@ -12,7 +12,7 @@ type SdViewportAction =
     | { type: 'resetError'}
   
 export function SdViewportReducer(state: ISdViewportState, action: SdViewportAction): ISdViewportState {
-    console.log(action);
+    // console.log(action);
     switch (action.type) {
         case 'setViewport': {
             return {

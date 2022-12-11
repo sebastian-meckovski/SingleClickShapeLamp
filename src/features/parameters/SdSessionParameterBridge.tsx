@@ -15,13 +15,11 @@ export default function SdSessionParameterBridge() : JSX.Element {
 
   useEffect( () => {
     if (session) {
-      console.log(`Registering session named ${name}`)
       dispatch(thunkRegisterSession({session: session, name: name}));
     } 
 
     return () => {
       if (session) {
-        console.log(`Deregistering session named ${name}`)
         dispatch(thunkDeregisterSession({name: name}));
       }
     }

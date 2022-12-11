@@ -37,14 +37,12 @@ export default function SdSessionInteractionData({interactionDataId, interaction
       const data = new InteractionData(interactionTypes, interactionDataId);
       
       const nodes = getChildrenAtLevel(session.node, level);
-      console.log(`Adding interaction data for ${nodes.length} nodes at level ${level} of session ${session.id}`)
       
       for (let i = 0; i < nodes.length; i++) {
         nodes[i].addData(data);
       }
 
       return () => {
-        console.log(`Removing interaction data for session ${session.id}`)
 
         for (let i = 0; i < nodes.length; i++) {
           nodes[i].removeData(data);

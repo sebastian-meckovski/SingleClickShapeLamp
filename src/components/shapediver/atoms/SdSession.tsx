@@ -35,7 +35,7 @@ export default function SdSession({ticket, modelViewUrl, children, name} : Props
     );
     
     return () => {
-      console.log(`Cleaning up session for ticket ${ticket.substring(0, 30)}…, modelViewUrl ${modelViewUrl} (might happen due to React strict mode during development)`)
+      // console.log(`Cleaning up session for ticket ${ticket.substring(0, 30)}…, modelViewUrl ${modelViewUrl} (might happen due to React strict mode during development)`)
       sessionPromiseRef.current = sessionPromiseRef.current
       .then(
         s => {

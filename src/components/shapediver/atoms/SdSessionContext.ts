@@ -15,7 +15,6 @@ type SdSessionAction =
     | { type: 'resetParameter', id: string };
 
 export function SdSessionReducer(state: ISdSessionState, action: SdSessionAction): ISdSessionState {
-    console.log(action);
     switch (action.type) {
         case 'setSession': {
             return {

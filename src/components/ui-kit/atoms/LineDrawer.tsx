@@ -1,7 +1,7 @@
-import {  useState } from 'react';
-// import { SdSessionContext } from '../../shapediver/atoms/SdSessionContext';
+import {  useState, useContext } from 'react';
+import { SdSessionContext } from '../../shapediver/atoms/SdSessionContext';
 // import { IParameterApi } from '@shapediver/viewer';
-// import { debounce } from 'debounce';
+import { debounce } from 'debounce';
 import { BezierDrawer } from 'seb-curved-line-drawer';
 
 interface Props {
@@ -18,27 +18,29 @@ interface Coordinates {
 export const LineDrawer = ({ size, paramid }: Props): JSX.Element => {
 	// TODO refactor based on parametersSlice
 
-	// const { state, dispatch } = useContext(SdSessionContext);
+	const { state, dispatch } = useContext(SdSessionContext);
 	const [value, setValue] = useState<Array<Coordinates>>();
 
-	function updateCoords(e: Array<Coordinates>) {
-		// var coords = {
-		// 	controlPoints: {
-		// 		point1: `{${100 - e[0].y * 0.5}, ${150 - e[0].x * -0.5}, 0}`,
-		// 		point2: '{200, 350, 0}',
-		// 		point3: `{400, 150, 0}`,
-		// 		point4: '{100, 0, 0}',
-		// 	},
-		// };
+	var coords;
 
-		// dispatch!({
-		// 	type: 'setParameter',
-		// 	id: 'd2062690-9d31-4706-a5ae-8c2efcc1df24',
-		// 	value: JSON.stringify(coords),
-		// });
+	function updateCoords(e: Array<Coordinates>) {
+		coords = {
+			controlPoints: {
+				point1: `{50, 500, 0}`,
+				point2: `{${e[0].x}, ${size - e[0].y}, 0}`,
+				point3: `{${e[1].x}, ${size - e[1].y}, 0}`,
+				point4: `{${e[2].x}, ${size - e[2].y}, 0}`,
+			},
+		};
+
+		dispatch!({
+			type: 'setParameter',
+			id: 'd2062690-9d31-4706-a5ae-8c2efcc1df24',
+			value: JSON.stringify(coords),
+		});
 
 		let myCoords = [
-			{x: e[0].x, y: e[0].y}, {x: e[1].x, y: e[1].y}, {x: e[2].x, y: e[2].y}
+			{x: e[0].x, y: size - e[0].y}, {x: e[1].x, y: size - e[1].y}, {x: e[2].x, y: size - e[2].y}
 		]
 
 		setValue(myCoords)
@@ -46,7 +48,7 @@ export const LineDrawer = ({ size, paramid }: Props): JSX.Element => {
 
 	return (
 		<>
-			<BezierDrawer size={size} onCoordUpdate={updateCoords} />
+			<BezierDrawer size={size} onCoordUpdate={debounce( (e : Array<Coordinates>) => {updateCoords(e)} )} />
 			<pre>{JSON.stringify(value)}</pre>
 
 		</>

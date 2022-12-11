@@ -6,6 +6,7 @@ import { debounce } from 'debounce';
 
 interface Props {
   paramid : string
+  key: number
 }
 
 export const Slider = ({ paramid } : Props) : JSX.Element => {
@@ -16,7 +17,6 @@ export const Slider = ({ paramid } : Props) : JSX.Element => {
   const session = state.session!;
   const param = session.parameters[paramid] as IParameterApi<number>;
   const value = param.type === 'Float' ? parseFloat(param.value+'') : parseInt(param.value+'')
-  // {   "controlPoints": {     "point1": "{100, 500, 0}",     "point2": "{200, 350, 0}",     "point3": "{200, 150, 0}",     "point4": "{100, 0, 0}"   } }
 
   return (
     <SliderField
