@@ -18,7 +18,7 @@ interface Coordinates {
 export const LineDrawer = ({ size, paramid }: Props): JSX.Element => {
 	// TODO refactor based on parametersSlice
 
-	const { state, dispatch } = useContext(SdSessionContext);
+	const { dispatch } = useContext(SdSessionContext);
 	const [value, setValue] = useState<Array<Coordinates>>();
 
 	var coords;
