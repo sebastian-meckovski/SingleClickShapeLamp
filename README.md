@@ -1,6 +1,6 @@
 # Seb's Shape Lamp
 
-[https://lively-river-020d24803.1.azurestaticapps.net/](Hosted verson) 
+[Hosted version](https://lively-river-020d24803.1.azurestaticapps.net/)
 
 ## Available Scripts
 
