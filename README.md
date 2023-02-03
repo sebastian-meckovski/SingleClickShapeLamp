@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Seb's Shape Lamp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[https://lively-river-020d24803.1.azurestaticapps.net/](Hosted verson) 
 
 ## Available Scripts
 
